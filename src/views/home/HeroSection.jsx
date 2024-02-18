@@ -23,7 +23,7 @@ const HeroSection = () => {
             </div>
             <p className="text-sm font-medium">Join our team &rarr;</p>
           </div>
-          <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
+          <h1 className="mt-8 text-3xl font-bold tracking-tight md:text-4xl lg:text-6xl">
             People who care about your growth
           </h1>
           <p className="mt-8 text-lg text-gray-700">
@@ -45,7 +45,7 @@ const HeroSection = () => {
             <div>
               <button
                 type="button"
-                className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                className="addtoCart rounded-md px-3 py-2.5 text-sm font-semibold text-white shadow-sm h-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
                 Subscribe
               </button>

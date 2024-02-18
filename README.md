@@ -24,3 +24,8 @@ export default {
 @tailwind components;
 @tailwind utilities;
 
+
+# next would be live streaming app
+
+# data for makeup
+https://makeup-api.herokuapp.com/

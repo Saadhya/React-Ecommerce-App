@@ -15,12 +15,12 @@ import {
   SquareAsteriskIcon,
   SquareCode,
 } from "lucide-react";
+import FeaturedProducts from "./FeaturedProducts";
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
-      <Ourteam />
       <Evaluation />
       <div className="bg-gray-100 max-w w-full  my-6 py-8">
         <div className="mx-auto max-w-3xl md:text-center text-center">
@@ -36,6 +36,8 @@ const Home = () => {
           <DiscAlbum size={60} color="gray" />
         </div>
       </div>
+      <Ourteam />
+      <FeaturedProducts />
     </div>
   );
 };

@@ -3,8 +3,49 @@
 @tailwind utilities;
 
 * {
-  color: rgb(46, 46, 160)
+  
+  /* color: rgb(46, 46, 160) */
+  /* color: #149ea0; */
+  /* color: 	rgb(159 18 57); */
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #149ea0;
+  /* color: #22adaf; */
+}
+.bg-blue-cos{
+  background-color: #155b5c;
+}
+
+.logo {
+  color: #1f7b7d;
+}
+
+span {
+  color: black;
+}
+
+label {
+  color: black
+}
+
+ .addtoCart {
+  background-color: #149ea0
+}
+input{
+  color: black
+}
+.addtoCart:hover{
+  color: #074c4f;
+  border:1px solid #074c4f;
+  background-color: white;
+}
+
+
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
