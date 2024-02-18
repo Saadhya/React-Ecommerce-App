@@ -30,18 +30,9 @@ const data = [
 ];
 const Evaluation = () => {
   return (
-    <div className=" mx-auto max-w-7xl w-full bg-white px-2 capitalize my-4 py-6 ">
-      <div className="mx-auto max-w-3xl md:text-center text-center">
-        <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">
-          Our goal
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-gray-600 md:text-xl">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam
-          reiciendis a vel error explicabo voluptatum nihil possimus veritatis
-          eos culpa.
-        </p>
-      </div>
-      <div className="mt-8 mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+    <div className="mx-auto max-w-full w-full bg-white px-2 capitalize my-4 py-6 flex justify-center items-center lg:flex-row md:flex-col">
+     
+      <div className="m-8 mx-auto grid max-w-7xl grid-cols-4 gap-6 md:grid-cols-2 lg:grid-cols-2">
         {data.map((item, i) => (
           <div
             className="w-[300px] rounded-xl border bg-gray-800 shadow-xl p-4 flex items-center justify-center font-capitalize"
@@ -63,6 +54,18 @@ const Evaluation = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* text */}
+      <div className="mx-auto my-4 p-4 max-w-full md:text-center text-center">
+        <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl lg:leading-tight text-rose-700">
+          Our Strategy
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-gray-600 md:text-xl">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam
+          reiciendis a vel error explicabo voluptatum nihil possimus veritatis
+          eos culpa.
+        </p>
       </div>
     </div>
   );

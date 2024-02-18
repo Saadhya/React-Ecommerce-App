@@ -1,29 +1,40 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
+import productReducer from "./productReducer";
+import * as types from "./contextTypes";
 
 const ProductContext = createContext(null);
-const prodReducer = () => {};
 
 const initialState = {
+  isLoading: false,
+  isError: false,
   products: [],
+  featuredProducts: [],
 };
 
 const ProductProvider = ({ children }) => {
-  const { prodState, dispatch } = useReducer(prodReducer, initialState);
-
-  let url = "https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush"
-  const getProducts = ()=>{
-
-  }
+  // to set data we are using reducer
+  const { prodState, dispatch } = useReducer(productReducer, initialState);
+  // console.log(dispatch);
+  let url =
+    "https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush";
+  const getProducts = async () => {
+    dispatch({ type: types.SET_LOADING });
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+      dispatch({ type: types.GET_PRODUCTS, payload: data });
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: types.IS_ERROR });
+    }
+  };
   useEffect(() => {
-    getProducts()
-  
-    // return () => {
-    //   second
-    // }
-  }, [prodState.products])
-  
+    getProducts();
+  }, []);
+
   return (
-    <ProductContext.Provider value={{ ...prodState }}>
+    <ProductContext.Provider value={{ ...prodState, dispatch }}>
       {children}
     </ProductContext.Provider>
   );

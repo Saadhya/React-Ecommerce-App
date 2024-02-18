@@ -6,7 +6,7 @@ const FeaturedProducts = () => {
       {Array.from({ length: 4 }).map((_, i) => (
         <div
           key={i}
-          className="relative aspect-[16/9]  w-auto rounded-md md:aspect-auto md:h-[400px]"
+          className="relative aspect-[16/9]  w-auto rounded-md md:aspect-auto md:h-[300px]"
         >
           <img
             src="https://images.unsplash.com/photo-1588099768531-a72d4a198538?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NnwxMTM4MTU1NXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"

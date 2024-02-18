@@ -16,8 +16,12 @@ import {
   SquareCode,
 } from "lucide-react";
 import FeaturedProducts from "./FeaturedProducts";
+import { useProduct } from "../../context/ProductsContext";
 
 const Home = () => {
+  const { products } = useProduct();
+  // console.log(products);
+
   return (
     <div>
       <HeroSection />
