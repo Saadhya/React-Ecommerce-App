@@ -13,20 +13,21 @@ const initialState = {
 
 const ProductProvider = ({ children }) => {
   // to set data we are using reducer
-  const { prodState, dispatch } = useReducer(productReducer, initialState);
+  const [prodState, dispatch] = useReducer(productReducer, initialState);
   // console.log(dispatch);
   let url =
     "https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush";
+
   const getProducts = async () => {
-    dispatch({ type: types.SET_LOADING });
     try {
+      dispatch({ type: types.SET_LOADING });
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       dispatch({ type: types.GET_PRODUCTS, payload: data });
     } catch (error) {
       console.log(error);
-      dispatch({ type: types.IS_ERROR });
+      // dispatch({ type: types.IS_ERROR });
     }
   };
   useEffect(() => {

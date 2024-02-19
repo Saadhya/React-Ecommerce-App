@@ -30,3 +30,8 @@ export default {
 # data for makeup
 https://makeup-api.herokuapp.com/
 https://jsonformatter.org/json-viewer
+
+# new features to be added
+filter on products page
+keep making it responsive for all screens
+make products clickable

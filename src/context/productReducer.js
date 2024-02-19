@@ -1,6 +1,12 @@
 import * as types from "./contextTypes";
 const productReducer = (state, { type, payload }) => {
   switch (type) {
+    case types.SET_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+
     case types.GET_PRODUCTS:
       return {
         ...state,
@@ -15,11 +21,6 @@ const productReducer = (state, { type, payload }) => {
         isError: true,
       };
 
-    case types.SET_LOADING:
-      return {
-        ...state,
-        isLoading: true,
-      };
     default:
       return state;
   }
