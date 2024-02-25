@@ -35,3 +35,6 @@ https://jsonformatter.org/json-viewer
 filter on products page
 keep making it responsive for all screens
 make products clickable
+improve performance with unique way
+add securtity to this project
+start using jest
