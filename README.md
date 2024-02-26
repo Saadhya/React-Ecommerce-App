@@ -57,6 +57,7 @@ You can now use the font in your CSS code like this:
 https://fonts.google.com/
 # more features of tailwindcsss - don't forget to install the library
 https://flowbite.com/docs/getting-started/introduction/
+https://tailwindui.com/components/application-ui/elements/buttons 
 
 # next goal- to create custom theme project
 https://debbie.codes/blog/theming-in-react/
