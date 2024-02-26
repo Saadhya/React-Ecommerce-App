@@ -1,8 +1,17 @@
 import React from "react";
+import FormatIndianPrice from "../../helpers/FormatPrice";
+import { useNavigate } from "react-router-dom";
 
 const ProductItem = ({ productItem }) => {
+  const nav = useNavigate();
   return (
-    <div className="rounded-md border relative ">
+    <div
+      className="rounded-md border relative cursor-pointer"
+      onClick={() =>
+        nav(`/productDetails/${productItem.id}`, { state: { productItem } })
+      }
+      // onClick={() => getSingleProduct(productItem.id)}
+    >
       <img
         src={productItem && productItem.api_featured_image}
         alt="Laptop"
@@ -20,13 +29,14 @@ const ProductItem = ({ productItem }) => {
             {productItem && productItem.brand}
           </span> */}
           {productItem &&
-            productItem.tag_list
-              .splice(0, 3)
-              .map((tag) => (
-                <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
-                  {tag}
-                </span>
-              ))}
+            productItem.tag_list.splice(0, 3).map((tag, index) => (
+              <span
+                key={index}
+                className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900"
+              >
+                {tag}
+              </span>
+            ))}
         </div>
         <div className="mt-3 flex items-center space-x-2">
           <span className="block text-sm font-semibold">Colors : </span>
@@ -45,8 +55,9 @@ const ProductItem = ({ productItem }) => {
         <div className="mt-3 flex items-center space-x-2 font-bold">
           <span className="block text-sm font-semibold">Price : </span>
           <span className="text-rose-700">
-            {productItem && productItem.price_sign}{" "}
-            {productItem && productItem.price}
+            {/* {productItem && productItem.price_sign}{" "} */}
+            {/* code={productItem.currency} */}
+            <FormatIndianPrice price={productItem.price} />
           </span>
         </div>
         {/* <div className="mt-5 flex items-center space-x-2">

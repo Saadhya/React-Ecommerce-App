@@ -9,12 +9,15 @@ const initialState = {
   isError: false,
   products: [],
   featuredProducts: [],
+  singleProduct:null
 };
 
 const ProductProvider = ({ children }) => {
   // to set data we are using reducer
   const [prodState, dispatch] = useReducer(productReducer, initialState);
+
   // console.log(dispatch);
+  const baseurl="http://makeup-api.herokuapp.com/api/v1/products.json"
   let url =
     "https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush";
 
@@ -30,12 +33,24 @@ const ProductProvider = ({ children }) => {
       // dispatch({ type: types.IS_ERROR });
     }
   };
+
+  const getSingleProduct = async (id) => {
+    try {
+      const res = await fetch(`https://makeup-api.herokuapp.com/api/v1/products/${id}`);
+      const singleProduct = await res.json();
+      console.log(singleProduct);
+      dispatch({ type: types.SINGLE_PRODUCT, payload: singleProduct });
+    } catch (error) {
+      console.log(error);
+      // dispatch({ type: types.IS_ERROR });
+    }
+  };
   useEffect(() => {
     getProducts();
   }, []);
 
   return (
-    <ProductContext.Provider value={{ ...prodState, dispatch }}>
+    <ProductContext.Provider value={{ ...prodState, dispatch, getSingleProduct }}>
       {children}
     </ProductContext.Provider>
   );

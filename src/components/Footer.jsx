@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import SocialIcons from "../assets/SocialIcons";
+import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
   return (

@@ -13,6 +13,12 @@ const productReducer = (state, { type, payload }) => {
         isLoading: false,
         products: payload,
       };
+    case types.SINGLE_PRODUCT:
+      return {
+        ...state,
+        isLoading: false,
+        singleProduct: payload,
+      };
 
     case types.IS_ERROR:
       return {
