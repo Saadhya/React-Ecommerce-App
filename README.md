@@ -59,6 +59,13 @@ https://fonts.google.com/
 https://flowbite.com/docs/getting-started/introduction/
 https://tailwindui.com/components/application-ui/elements/buttons 
 
+
+# deploy
+https://github.com/ErickKS/vite-deploy
+https://github.com/actions/setup-node
+https://vitejs.dev/guide/static-deploy#github-pages
+
+
 # next goal- to create custom theme project
 https://debbie.codes/blog/theming-in-react/
 https://debbie.codes/videos
