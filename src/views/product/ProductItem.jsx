@@ -6,24 +6,31 @@ const ProductItem = ({ productItem }) => {
   const nav = useNavigate();
   return (
     <div
-      className="rounded-md border relative cursor-pointer"
-      onClick={() =>
-        nav(`/productDetails/${productItem.id}`, { state: { productItem } })
-      }
+      className="rounded-md border relative "
       // onClick={() => getSingleProduct(productItem.id)}
     >
       <img
         src={productItem && productItem.api_featured_image}
         alt="Laptop"
-        className="aspect-[16/9] w-full rounded-md md:aspect-auto md:h-[300px] lg:h-[200px]"
+        className="aspect-[16/9] w-full rounded-md md:aspect-auto md:h-[300px] lg:h-[200px] cursor-pointer"
+        onClick={() =>
+          nav(`/productDetails/${productItem.id}`, { state: { productItem } })
+        }
       />
       <div className="p-4">
-        <h1 className="inline-flex items-center text-lg font-semibold">
-          {productItem && productItem.name}
-        </h1>
-        <p className="mt-3 text-sm text-gray-600 text-ellipsis overflow-hidden truncate">
-          {productItem && productItem.description}
-        </p>
+        <div
+          className="cursor-pointer"
+          onClick={() =>
+            nav(`/productDetails/${productItem.id}`, { state: { productItem } })
+          }
+        >
+          <h1 className="inline-flex items-center text-lg font-semibold">
+            {productItem && productItem.name}
+          </h1>
+          <p className="mt-3 text-sm text-gray-600 text-ellipsis overflow-hidden truncate">
+            {productItem && productItem.description}
+          </p>
+        </div>
         <div className="mt-4">
           {/* <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 uppercase text-[10px] font-semibold text-gray-900">
             {productItem && productItem.brand}
