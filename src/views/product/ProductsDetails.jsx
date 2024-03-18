@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -21,14 +21,23 @@ const ProductsDetails = () => {
   const { state } = useLocation();
   const singleProduct = state && state.productItem;
   console.log(state.productItem);
+
   const deliveryItems = [
     { title: "Free delivery", icon: <Truck /> },
     { title: "15 days replacement", icon: <Replace /> },
     { title: "amazon delivered", icon: <TruckIcon /> },
     { title: "2 year warranty", icon: <ShieldCheck /> },
   ];
+  const imgs = [
+    "https://images.unsplash.com/photo-1580902394836-21e0d429b7f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=924&q=80",
+    "https://images.unsplash.com/photo-1580902394743-1394a7ec93d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1580902394767-81b0facc0894?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  ];
   // accrding to video, call singleproduct function here to useeffect function
-
+  const [mainImg, setMainImg] = useState(imgs[0]);
+  const nextImg = ()=>{
+    
+  }
   return (
     <div className="container">
       <PageNavigation title={singleProduct.name} />
@@ -43,7 +52,8 @@ const ProductsDetails = () => {
                     <div className="relative flex items-center justify-center h-full">
                       <img
                         alt={singleProduct.name}
-                        src={singleProduct.api_featured_image}
+                        // src={singleProduct.api_featured_image}
+                        src={mainImg}
                         // src="https://images.unsplash.com/photo-1580902394724-b08ff9ba7e8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"
                         width={650}
                         height={490}
@@ -61,26 +71,23 @@ const ProductsDetails = () => {
                       />
                     </div>
                   </div>
-                  {/* <div className="flex gap-2 xl:flex-col">
-                  {[
-                    "https://images.unsplash.com/photo-1580902394836-21e0d429b7f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=924&q=80",
-                    "https://images.unsplash.com/photo-1580902394743-1394a7ec93d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-                    "https://images.unsplash.com/photo-1580902394767-81b0facc0894?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-                  ].map((image, index) => (
-                    <div
-                      key={image}
-                      className="border-border-base flex cursor-pointer items-center justify-center overflow-hidden rounded border transition hover:opacity-75 "
-                    >
-                      <img
-                        alt={`Product ${index}`}
-                        src={image}
-                        decoding="async"
-                        loading="lazy"
-                        className="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32"
-                      />
-                    </div>
-                  ))}
-                </div> */}
+                  <div className="flex gap-2 xl:flex-col">
+                    {imgs.map((currImg, index) => (
+                      <div
+                        key={currImg}
+                        className="border-border-base flex cursor-pointer items-center justify-center overflow-hidden rounded border transition hover:opacity-75 "
+                      >
+                        <img
+                          alt={`Product ${index}`}
+                          src={currImg}
+                          decoding="async"
+                          loading="lazy"
+                          onClick={() => setMainImg(currImg)}
+                          className="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
               <div className="flex shrink-0 flex-col lg:w-[430px] xl:w-[470px] 2xl:w-[480px] capitalize">
@@ -165,7 +172,9 @@ const ProductsDetails = () => {
                   {deliveryItems.map((item) => (
                     <div className="flex flex-col gap-2 items-center">
                       <WhiteCircle>{item.icon}</WhiteCircle>
-                      <p className="text-cyan-800 text-xs font-semibold">{item.title}</p>
+                      <p className="text-cyan-800 text-xs font-semibold">
+                        {item.title}
+                      </p>
                     </div>
                   ))}
                 </div>
