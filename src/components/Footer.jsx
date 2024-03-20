@@ -4,7 +4,7 @@ import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
   return (
-    <section className="relative bottom-0 overflow-hidden bg-blue-cos text-white py-8 bg-blend-hue capitalize mt-4">
+    <section className="bottom-0 overflow-hidden bg-blue-cos text-white py-8 bg-blend-hue capitalize mt-4">
       <div className="container relative z-10 mx-auto px-4 flex max-w-7xl">
         <div className="-m-8 flex flex-wrap items-center justify-between">
           <div className="w-auto p-8">

@@ -18,13 +18,14 @@ const ProductProvider = ({ children }) => {
 
   // console.log(dispatch);
   const baseurl="http://makeup-api.herokuapp.com/api/v1/products.json"
+  
   let url =
     "https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush";
 
   const getProducts = async () => {
     try {
       dispatch({ type: types.SET_LOADING });
-      const response = await fetch(url);
+      const response = await fetch(baseurl);
       const data = await response.json();
       // console.log(data);
       dispatch({ type: types.GET_PRODUCTS, payload: data });

@@ -6,6 +6,7 @@ import Products from "./views/product/Products";
 import ErrorPage from "./views/ErrorPage";
 import Layout from "./container/Layout";
 import ProductsDetails from "./views/product/ProductsDetails";
+import FilterBar from "./components/FilterBar";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About />}></Route>
-            <Route path="/products" element={<Products />}></Route>
+            <Route path="/products" element={<FilterBar />}></Route>
             <Route path="/productDetails/:id" element={<ProductsDetails />}></Route>
             <Route path="/productDetails/:product_type" element={<ProductsDetails />}></Route>
             <Route path="/cart" element={<Products />}></Route>
