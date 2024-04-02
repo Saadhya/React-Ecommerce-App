@@ -14,8 +14,6 @@
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
-    "flowbite": "^2.3.0",
-    "flowbite-react": "^0.7.2",
     "gh-pages": "^6.1.1",
     "lucide-react": "^0.331.0",
     "react": "^18.2.0",

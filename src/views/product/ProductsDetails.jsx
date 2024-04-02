@@ -14,6 +14,7 @@ import FormatIndianPrice from "../../helpers/FormatPrice";
 import PageNavigation from "../../components/PageNavigation";
 import Accordion from "../../components/Accordion";
 import WhiteCircle from "../../components/WhiteCircle";
+import Ratings from "./Ratings";
 
 const ProductsDetails = () => {
   // const {id}=useParams()
@@ -121,10 +122,15 @@ const ProductsDetails = () => {
                           {tag}
                         </span>
                       ))}
-                    {/* <li className="md:text-15px mb-2 flex h-9 cursor-pointer items-center justify-center rounded border p-1 px-3 text-sm font-medium transition duration-200 ease-in-out md:mb-3 md:h-10">
-                    8 UK
-                  </li> */}
+                    
                   </ul>
+                </div>
+                {/* ratings */}
+                <div className="mb-2 pt-0.5" style={{}}>
+                  <h4 className="text-15px mb-3 font-semibold text-opacity-70">
+                  ratings:
+                  </h4>
+                  <Ratings star={singleProduct?.rating}/>                
                 </div>
                 {/* colors */}
                 <div className="mt-3 flex items-center space-x-2">
@@ -202,6 +208,7 @@ const ProductsDetails = () => {
                     </div>
                   </div>
                 </div>
+              
                 <Accordion />
                 {/* <div className="">
                   <header className="flex cursor-pointer items-center justify-between border-t border-gray-300 py-5 transition-colors md:py-6">

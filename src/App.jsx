@@ -6,7 +6,7 @@ import Products from "./views/product/Products";
 import ErrorPage from "./views/ErrorPage";
 import Layout from "./container/Layout";
 import ProductsDetails from "./views/product/ProductsDetails";
-import FilterBar from "./components/FilterBar";
+import FilterBar from "./views/product/FilterBar";
 
 function App() {
   return (

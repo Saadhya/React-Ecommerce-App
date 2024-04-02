@@ -1,7 +1,8 @@
 import { ChevronDown, X } from "lucide-react";
-import React, { useEffect, useState } from "react";
-import Products from "../views/product/Products";
-import { useProduct } from "../context/ProductsContext";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import Products from "./Products";
+import { useProduct } from "../../context/ProductsContext";
+
 const filters = [
   {
     id: "color",
@@ -30,11 +31,11 @@ const filters = [
     id: "price",
     name: "Price",
     options: [
-      { value: "0", label: "0 - 50", min:0, max:50 },
-      { value: "50", label: "50 - 100" },
-      { value: "100", label: "100 - 150" },
-      { value: "150", label: "150 - 200" },
-      { value: "200", label: "Over 200" },
+      { value: "0-500", label: "0 - 500" },
+      { value: "500-1000", label: "500 - 1000" },
+      { value: "1000-1500", label: "1000 - 1500" },
+      { value: "1500-2000", label: "1500- 2000" },
+      { value: "2000-100000", label: "Over 2000" },
     ],
   },
   //   {
@@ -55,7 +56,12 @@ const FilterBar = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
+  // setting products at first
   console.log(filteredProducts);
+  useLayoutEffect(() => {
+    setFilteredProducts(products);
+    console.log(filteredProducts);
+  }, [0]);
 
   //   input filter
   const handleInputChange = (e) => {
@@ -64,6 +70,7 @@ const FilterBar = () => {
   };
   //   radio filter
   const handleChange = (e) => {
+    // console.log('FilterBar.jsx',e.target.value);
     setSelectedCategory(e.target.value);
   };
   //   button filter
@@ -74,20 +81,19 @@ const FilterBar = () => {
   const filteredItems = filteredProducts.filter((prod) =>
     prod.name.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1)
   );
-//   const [priceRange, setPriceRange] = useState({ min: 0, max: 100 });
   const filteredData = (prods, query, selected) => {
     let filteredProds = prods;
     if (query) {
       filteredProds = filteredItems;
     }
     if (selected) {
-    //   console.log("selected: " + selected);
+      // console.log("selected: " + selected);
+      const [minPrice, maxPrice] = selected.split("-");
       filteredProds = filteredProds.filter(
         ({ category, price, product_type }) =>
           category === selected ||
           product_type === selected ||
-          price > selected
-        //   (price >= priceRange.min && price <= priceRange.max)
+          (price >= minPrice && price <= maxPrice)
       );
     }
     setFilteredProducts(filteredProds);
@@ -104,7 +110,7 @@ const FilterBar = () => {
           <div className="flex justify-between space-x-4">
             <h1 className="grup-font text-5xl font-bold">Listing Blushes</h1>
             {/* <h1 className="text-xl font-bold">Products</h1> */}
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <input
                 className="flex h-10 w-[250px] rounded-md bg-gray-100 px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                 type="text"
@@ -114,7 +120,13 @@ const FilterBar = () => {
                 name="query"
               ></input>
               <button
-                className="p-2 mx-2 bg-black text-white"
+                className="p-2 mx-2 bg-cyan-600 capitalize text-white h-8 items-center flex rounded-md hover:bg-cyan-800"
+                onClick={() => setQuery("")}
+              >
+                search{" "}
+              </button>
+              <button
+                className="p-2 mx-2 bg-red-600 capitalize text-white h-8 items-center flex rounded-md hover:bg-red-800"
                 onClick={() => setQuery("")}
               >
                 clear{" "}
