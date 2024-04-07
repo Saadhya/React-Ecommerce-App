@@ -36,9 +36,7 @@ const ProductsDetails = () => {
   ];
   // accrding to video, call singleproduct function here to useeffect function
   const [mainImg, setMainImg] = useState(imgs[0]);
-  const nextImg = ()=>{
-    
-  }
+  const nextImg = () => {};
   return (
     <div className="container">
       <PageNavigation title={singleProduct.name} />
@@ -75,7 +73,7 @@ const ProductsDetails = () => {
                   <div className="flex gap-2 xl:flex-col">
                     {imgs.map((currImg, index) => (
                       <div
-                        key={currImg}
+                        key={index}
                         className="border-border-base flex cursor-pointer items-center justify-center overflow-hidden rounded border transition hover:opacity-75 "
                       >
                         <img
@@ -122,15 +120,14 @@ const ProductsDetails = () => {
                           {tag}
                         </span>
                       ))}
-                    
                   </ul>
                 </div>
                 {/* ratings */}
                 <div className="mb-2 pt-0.5" style={{}}>
                   <h4 className="text-15px mb-3 font-semibold text-opacity-70">
-                  ratings:
+                    ratings:
                   </h4>
-                  <Ratings star={singleProduct?.rating}/>                
+                  <Ratings star={singleProduct?.rating} />
                 </div>
                 {/* colors */}
                 <div className="mt-3 flex items-center space-x-2">
@@ -208,7 +205,7 @@ const ProductsDetails = () => {
                     </div>
                   </div>
                 </div>
-              
+
                 <Accordion />
                 {/* <div className="">
                   <header className="flex cursor-pointer items-center justify-between border-t border-gray-300 py-5 transition-colors md:py-6">

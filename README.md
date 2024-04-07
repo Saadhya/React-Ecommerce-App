@@ -64,7 +64,7 @@ You can now use the font in your CSS code like this:
 
 https://fonts.google.com/
 
-# more features of tailwindcsss - don't forget to install the library
+# more features of tailwindcsss - don't forget to install the library- complicated 
 
 https://flowbite.com/docs/getting-started/introduction/
 https://tailwindui.com/components/application-ui/elements/buttons
@@ -80,6 +80,8 @@ learnt and added custom console.log() in keyboard shortcuts: like below:-
     "snippet": "console.log('${TM_FILENAME}','${TM_SELECTED_TEXT}$1')$2;"
   }
 }
+New features of ECMA 13:-
+https://www.sencha.com/blog/6-amazing-and-useful-new-javascript-features-in-es13/
 
 # deploy
 

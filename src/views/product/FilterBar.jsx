@@ -56,12 +56,14 @@ const FilterBar = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
+  
   // setting products at first
   console.log(filteredProducts);
+
   useLayoutEffect(() => {
     setFilteredProducts(products);
     console.log(filteredProducts);
-  }, [0]);
+  }, [selectedCategory]);
 
   //   input filter
   const handleInputChange = (e) => {
