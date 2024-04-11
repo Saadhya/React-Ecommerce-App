@@ -3,11 +3,6 @@ import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
 
 const Terms = () => {
   const docs = [
-    // {
-    //   uri:require("./Privacy-Policy.docx"),
-    //   fileType:"docx",
-    //   fileName:"Privacy-Policy.docx"
-    // },
     {
       uri: "./demo.docx",
       fileType: "docx",
