@@ -102,3 +102,7 @@ https://debbie.codes/videos
   https://www.youtube.com/results?search_query=atino+next+js
 
 # next would be live streaming app
+
+# react file reader
+https://www.npmjs.com/package/@cyntler/react-doc-viewer?activeTab=readme
+https://www.npmjs.com/package/react-doc-viewer

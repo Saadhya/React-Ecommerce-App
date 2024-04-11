@@ -21,8 +21,8 @@ const Footer = () => {
             <ul className="-m-5 flex flex-wrap items-center">
               <li className="p-5">
                 <a
-                  className="font-medium text-white hover:text-gray-300"
-                  href="#"
+                  className="font-medium text-white hover:text-gray-300 "
+                  href="/policy"
                 >
                   Privacy Policy
                 </a>
@@ -30,7 +30,7 @@ const Footer = () => {
               <li className="p-5">
                 <a
                   className="font-medium text-white hover:text-gray-300"
-                  href="#"
+                  href="/terms"
                 >
                   Terms of Service
                 </a>
@@ -38,7 +38,7 @@ const Footer = () => {
               <li className="p-5">
                 <a
                   className="font-medium text-white hover:text-gray-300"
-                  href="#"
+                  href="/disclaimer"
                 >
                   Return Policy
                 </a>
